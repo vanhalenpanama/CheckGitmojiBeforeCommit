@@ -46,4 +46,4 @@ source: https://gist.github.com/parmentf/035de27d6ed1dce0b36a
 | Code review changes        | :ok_hand: `:ok_hand:`                         |
 | Accessibility              | :wheelchair: `:wheelchair:`                   |
 | Move/rename repository     | :truck: `:truck:`                             |
-| Other                      | [Be creative](http://www.emoji-cheat-sheet.com/)  |
+| Memo                       | :memo: `:memo:`                               |
