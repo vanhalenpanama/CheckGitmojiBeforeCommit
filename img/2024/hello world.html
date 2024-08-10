@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 정규 표현식을 사용하여 코드 블록을 찾고, 마크다운으로 변환
     const wrappedContent = content.replace(codePattern, (match, code) => {
         // 각 코드 블록을 <code> 태그로 감싸고 다시 마크다운 렌더링
-        return `<code>${marked(code)}</code>`;
+        return `<pre><code>${marked(code)}</code></pre>`;
     });
 
     // 최종 렌더링 결과
