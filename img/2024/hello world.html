@@ -143,6 +143,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+////////////////////새로 추가한 부분//////////////////////////////
+
+    function renderMarkdown(content) {
+    // 모든 내용에 대해 '+우선 'div'로 감싸지 않음
+    const temporaryElement = document.createElement('div');
+    temporaryElement.innerHTML = content;
+
+    // 모든 코드 블록 감지 (''' 코드 ''' 형식)
+    const codePattern = /'''([^']*?)'''/g;
+
+    // 정규 표현식을 사용하여 코드 블록을 찾고, 마크다운으로 변환
+    const wrappedContent = content.replace(codePattern, (match, code) => {
+        // 각 코드 블록을 <code> 태그로 감싸고 다시 마크다운 렌더링
+        return `<code>${marked(code)}</code>`;
+    });
+
+    // 최종 렌더링 결과
+    return wrappedContent;
+}
+
+//////////////////////새로 추가한 부분//////////////////////////////////////////////////////////
+
     // 메시지를 화면에 추가하는 함수
     function addMessage(role, content) {
         // 새로운 div 요소 생성
@@ -150,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 메시지 역할에 따라 클래스 설정
         messageElement.className = `message ${role}-message`;
         // 메시지 내용 삽입
-        messageElement.innerHTML = `<div>${marked(content)}</div>`;
+        messageElement.innerHTML = `<div>${renderMarkdown(content)}</div>`;
         // 채팅 컨테이너에 메시지 요소 추가
         chatContainer.appendChild(messageElement);
         // 스크롤을 최신 메시지 위치로 이동
@@ -282,7 +304,7 @@ h1 {
 #chat-container {
     max-width: 200dvh;	
     height:90dvh;
-    max-height: 630px;
+    max-height: 680px;
     overflow-y: auto;
     border: 1px solid #61dafb;
     border-radius: 5px;
