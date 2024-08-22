@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 메시지 역할에 따라 클래스 설정
         messageElement.className = `message ${role}-message`;
         // 메시지 내용 삽입
-        messageElement.innerHTML = `<div>${renderMarkdown(content)}</div>`;
+        messageElement.innerHTML = `<div>${content}</div>`;
         // 채팅 컨테이너에 메시지 요소 추가
         chatContainer.appendChild(messageElement);
         // 스크롤을 최신 메시지 위치로 이동
