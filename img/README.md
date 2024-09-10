@@ -48,4 +48,3 @@ source: https://gist.github.com/parmentf/035de27d6ed1dce0b36a
 | Move/rename repository     | :truck: `:truck:`                             |
 | Memo                       | :memo: `:memo:`                               |
 
-
